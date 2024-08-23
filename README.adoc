@@ -1,0 +1,73 @@
+= NISO JATS Ruby library
+
+The `niso-jats` library is a parser and generator for NISO JATS XML documents.
+
+It is intended to be used to parse and generate NISO JATS XML v1.2 documents.
+
+== Installation
+
+Add this line to your application's Gemfile:
+
+[source,ruby]
+----
+gem 'niso-jats'
+----
+
+And then execute:
+
+[source]
+----
+$ bundle install
+----
+
+Or install it yourself as:
+
+[source]
+----
+$ gem install niso-jats
+----
+
+
+== Usage
+
+To parse a NISO JATS XML document:
+
+[source,ruby]
+----
+require 'niso-jats'
+
+jats = NisoJats::Document.new(File.read('jats.xml'))
+puts jats.title
+puts jats.abstract
+puts jats.sections
+----
+
+To generate a NISO JATS XML document:
+
+[source,ruby]
+----
+require 'niso-jats'
+
+jats = NisoJats::Document.new
+jats.title = 'An Article Title'
+jats.abstract = 'An Article Abstract'
+jats.sections = [
+  NisoJats::Section.new('Section 1', 'This is the first section'),
+  NisoJats::Section.new('Section 2', 'This is the second section')
+]
+
+puts jats.to_xml
+----
+
+
+== Contributing
+
+Bug reports and pull requests are welcome on GitHub at https://github.com/metanorma/niso-jats.
+
+
+== Copyright and license
+
+The gem is available as open source under the terms of the BSD 2-clause license.
+
+All rights reserved. Ribose
+
