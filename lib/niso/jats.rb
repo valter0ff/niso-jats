@@ -20,5 +20,3 @@ module Niso
     class Error < StandardError; end
   end
 end
-
-require_relative "jats/version"
