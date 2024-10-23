@@ -53,7 +53,7 @@ module Niso
       attribute :specific_use, :string
       attribute :toggle, :string
       attribute :underline_style, :string
-      include BasicText
+      include ::Niso::Jats::BasicText
 
       xml do
         root "underline"

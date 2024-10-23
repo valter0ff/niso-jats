@@ -16,3 +16,4 @@ module Niso
 end
 
 require_relative "jats/version"
+require_relative "jats/std"
